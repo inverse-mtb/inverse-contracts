@@ -6,7 +6,6 @@ public enum ClientOperationStatus {
   ACTIVE,
   COMPLETED,
   CANCELLED,
-  REVOKED,
   FAILED;
 
   @JsonValue
@@ -15,7 +14,6 @@ public enum ClientOperationStatus {
       case ACTIVE -> "Активний";
       case COMPLETED -> "Виконано";
       case CANCELLED -> "Анульовано";
-      case REVOKED -> "Кошти повернуто";
       case FAILED -> "Забраковано";
     };
   }
@@ -23,17 +21,17 @@ public enum ClientOperationStatus {
   public static ClientOperationStatus fromStatus(OperationStatus operationStatus) {
     return switch (operationStatus) {
       case INITIATED,
-          DOCUMENTS_GENERATED,
-          WAITING_FOR_SIGNATURE,
-          SIGNED,
-          DOCUMENTS_SEND,
-          FUNDS_CHARGED,
-          AWAITING_SECURITIES_DELIVERY ->
+              DOCUMENTS_GENERATED,
+              WAITING_FOR_SIGNATURE,
+              SIGNED_BY_CLIENT,
+              SIGNED_BY_BANK,
+              DOCUMENTS_SEND,
+              AWAITING_CUSTODIAN,
+              FUNDS_CHARGED ->
           ACTIVE;
-      case COMPLETED, SECURITIES_DELIVERED -> COMPLETED;
+      case COMPLETED, COMPLETED_EXTERNALLY -> COMPLETED;
       case CANCELLED -> CANCELLED;
-      case REVOKED -> REVOKED;
-      case FAILED, FAILED_INITIATION -> FAILED;
+      case FAILED -> FAILED;
     };
   }
 }

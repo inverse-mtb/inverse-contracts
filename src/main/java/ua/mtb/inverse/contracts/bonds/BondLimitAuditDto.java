@@ -2,7 +2,6 @@ package ua.mtb.inverse.contracts.bonds;
 
 import java.time.OffsetDateTime;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import ua.mtb.inverse.contracts.enums.AuditAction;
@@ -11,7 +10,6 @@ import ua.mtb.inverse.contracts.enums.TransactionType;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class BondLimitAuditDto {
   private Long id;
   private Long bondLimitId;

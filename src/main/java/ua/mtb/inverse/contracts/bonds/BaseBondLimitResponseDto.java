@@ -1,5 +1,6 @@
 package ua.mtb.inverse.contracts.bonds;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import lombok.Data;
@@ -14,7 +15,7 @@ public class BaseBondLimitResponseDto {
 
   private IssueCurrency issueCurrency;
 
-  private LocalDateTime tradeDate;
+  private LocalDate tradeDate;
 
   private LocalDateTime validTill;
 

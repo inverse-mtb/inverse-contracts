@@ -2,7 +2,6 @@ package ua.mtb.inverse.contracts.filedata;
 
 import java.time.OffsetDateTime;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import ua.mtb.inverse.contracts.enums.DocumentCategory;
@@ -10,7 +9,6 @@ import ua.mtb.inverse.contracts.enums.DocumentCategory;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class TemporaryFileDataDto {
   private Long id;
   private Integer version;
