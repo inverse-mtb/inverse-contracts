@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import ua.mtb.inverse.contracts.enums.OperationStatus;
@@ -11,6 +12,7 @@ import ua.mtb.inverse.contracts.enums.OperationStatus;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class SummaryReportPurchaseData {
   private Integer agreementNumber;
   private String buyerName;
