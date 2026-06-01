@@ -3,6 +3,7 @@ package ua.mtb.inverse.contracts.refund;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import ua.mtb.inverse.contracts.enums.RefundStatus;
@@ -10,6 +11,7 @@ import ua.mtb.inverse.contracts.enums.RefundStatus;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class RefundDto {
   private Long purchaseId;
   private LocalDate refundDate;
