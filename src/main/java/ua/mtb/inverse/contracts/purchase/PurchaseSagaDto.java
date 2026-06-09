@@ -1,10 +1,13 @@
 package ua.mtb.inverse.contracts.purchase;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import java.time.OffsetDateTime;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import ua.mtb.inverse.contracts.enums.SagaState;
+
+import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 
 @Data
 @Builder
@@ -12,14 +15,13 @@ import ua.mtb.inverse.contracts.enums.SagaState;
 @AllArgsConstructor
 public class PurchaseSagaDto {
   private Long id;
-  @NotNull private Integer version;
+  private Integer version;
   private OffsetDateTime createdAt;
   private OffsetDateTime updatedAt;
-  @NotBlank @NonNull private String diiaRequestId;
+  private String diiaRequestId;
   private SagaState state;
-  private OffsetDateTime scheduledTime;
-  @NotNull private Integer dealId;
+  private LocalDateTime scheduledTime;
+  private Integer dealId;
   private String custodianRequestId;
   private int phase2RetryCount;
-  private OffsetDateTime successNotifyB2At;
 }

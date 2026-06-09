@@ -1,10 +1,11 @@
 package ua.mtb.inverse.contracts.balance;
 
-import java.time.OffsetDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
 
 @Data
 @Builder
@@ -15,5 +16,5 @@ public class BondClientBalanceDto {
   private String isin;
   private Long quantity;
   private Long quantityBuyInApp;
-  private OffsetDateTime updatedAt;
+  private LocalDateTime updatedAt;
 }

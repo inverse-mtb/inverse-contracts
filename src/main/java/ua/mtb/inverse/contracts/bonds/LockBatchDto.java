@@ -1,16 +1,17 @@
 package ua.mtb.inverse.contracts.bonds;
 
-import java.time.OffsetDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
 
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class LockBatchDto {
-  private OffsetDateTime now;
+  private LocalDateTime now;
   private int batchSize;
 }

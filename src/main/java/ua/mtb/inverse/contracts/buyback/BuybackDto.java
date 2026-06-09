@@ -1,12 +1,5 @@
 package ua.mtb.inverse.contracts.buyback;
 
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Positive;
-import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.OffsetDateTime;
-import java.util.Map;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,16 +7,19 @@ import lombok.NoArgsConstructor;
 import ua.mtb.inverse.contracts.client.ClientDto;
 import ua.mtb.inverse.contracts.enums.DiiaStatus;
 import ua.mtb.inverse.contracts.enums.DocumentCategory;
-import ua.mtb.inverse.contracts.enums.IssueCurrency;
 import ua.mtb.inverse.contracts.enums.OperationStatus;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
+import java.util.Map;
 
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class BuybackDto {
-  @NotNull @Positive private Long id;
-  private Integer dealId;
+  private Long id;
   private Integer version;
   private OffsetDateTime createdAt;
   private OffsetDateTime updatedAt;
@@ -44,11 +40,5 @@ public class BuybackDto {
   private LocalDateTime buybackValidTill;
   private String custodianRequestId;
   private LocalDateTime nextRetryAt;
-  private int retryAttempt;
   private DiiaStatus diiaStatus;
-  private IssueCurrency currency;
-  private LocalDate maturityDate;
-  private LocalDateTime dealCompletedAt;
-  private String contragentId;
-  private OffsetDateTime diiaCallbackBuybackReceivedAt;
 }

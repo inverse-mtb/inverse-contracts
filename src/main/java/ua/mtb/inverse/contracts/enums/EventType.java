@@ -4,6 +4,5 @@ public enum EventType {
   PURCHASE,
   PURCHASE_CANCEL,
   BUYBACK,
-  //  BUYBACK_CANCEL,
   UNCLASSIFIED
 }
