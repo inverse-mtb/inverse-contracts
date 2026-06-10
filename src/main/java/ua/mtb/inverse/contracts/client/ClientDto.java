@@ -51,8 +51,6 @@ public class ClientDto {
   private Integer pFamilyStatusId;
   private Boolean isFop;
   private Boolean isPep;
-  @NotBlank
-  @NonNull
   private String custodianAccountNumber;
   private Boolean isCanOpened;
   private String generalAgreementNumber;
