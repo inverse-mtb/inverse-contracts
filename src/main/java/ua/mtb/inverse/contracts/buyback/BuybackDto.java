@@ -1,5 +1,7 @@
 package ua.mtb.inverse.contracts.buyback;
 
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,6 +21,8 @@ import java.util.Map;
 @NoArgsConstructor
 @AllArgsConstructor
 public class BuybackDto {
+  @NotNull
+  @Positive
   private Long id;
   private Integer version;
   private OffsetDateTime createdAt;

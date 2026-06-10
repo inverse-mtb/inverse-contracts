@@ -1,5 +1,7 @@
 package ua.mtb.inverse.contracts.reserve;
 
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,11 +20,19 @@ public class ReserveDto {
   private Integer version;
   private OffsetDateTime createdAt;
   private OffsetDateTime updatedAt;
+  @NotNull
+  @Positive
   private Long ownerId;
+  @NotNull
+  @Positive
   private Long clientId;
   private LimitType limitType;
+  @NotNull
+  @Positive
   private Long limitId;
+  @NotNull
   private Integer quantity;
   private LocalDateTime expireAt;
+  @Builder.Default
   private boolean released = false;
 }

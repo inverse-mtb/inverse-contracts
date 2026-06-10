@@ -1,9 +1,12 @@
 package ua.mtb.inverse.contracts.purchase;
 
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 import ua.mtb.inverse.contracts.client.ClientDto;
 import ua.mtb.inverse.contracts.enums.DiiaStatus;
 import ua.mtb.inverse.contracts.enums.DocumentCategory;
@@ -25,6 +28,7 @@ public class PurchaseDto {
   private Integer version;
   private OffsetDateTime createdAt;
   private OffsetDateTime updatedAt;
+  @Valid
   private ClientDto client;
   private String isin;
   private String clientAccountId;
@@ -37,6 +41,8 @@ public class PurchaseDto {
   private OperationStatus status;
   private String purchaseAgreementNumber;
   private String purchaseAgreementDate;
+  @NotBlank
+  @NonNull
   private String diiaRequestId;
   private String contragentId;
   private LocalDateTime purchaseValidTill;
