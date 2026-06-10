@@ -21,7 +21,6 @@ public class ApplyBondClientBalanceDto {
   @NonNull
   private String isin;
   @NotNull
-  @Positive
   private Long delta;
   private String operation;
   @Positive
