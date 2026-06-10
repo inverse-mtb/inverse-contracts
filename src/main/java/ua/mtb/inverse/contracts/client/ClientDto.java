@@ -1,9 +1,11 @@
 package ua.mtb.inverse.contracts.client;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 import ua.mtb.inverse.contracts.enums.ClientStatus;
 import ua.mtb.inverse.contracts.enums.GeneralAgreementState;
 
@@ -20,6 +22,8 @@ public class ClientDto {
   private OffsetDateTime updatedAt;
   private String phoneNumber;
   private String pin; //remove
+  @NotBlank
+  @NonNull
   private String contragentId;
   private String residentTypeId;
   private String sName;
@@ -47,12 +51,16 @@ public class ClientDto {
   private Integer pFamilyStatusId;
   private Boolean isFop;
   private Boolean isPep;
+  @NotBlank
+  @NonNull
   private String custodianAccountNumber;
   private Boolean isCanOpened;
   private String generalAgreementNumber;
   private Boolean isGanOpened;
   private String generalAgreementDate;
   private GeneralAgreementState generalAgreementState;
+  @NotBlank
+  @NonNull
   private String ibanToPay;
   private String ibanToReceive;
 }
