@@ -12,6 +12,8 @@ import lombok.NonNull;
 @NoArgsConstructor
 @Builder
 public class GenerateDocRequestB2 {
-  @NonNull @NotBlank private String univId;
+  @NonNull
+  @NotBlank
+  private String univId;
   private String reportParamValues;
 }
