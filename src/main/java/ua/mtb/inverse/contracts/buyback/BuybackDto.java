@@ -9,9 +9,11 @@ import lombok.NoArgsConstructor;
 import ua.mtb.inverse.contracts.client.ClientDto;
 import ua.mtb.inverse.contracts.enums.DiiaStatus;
 import ua.mtb.inverse.contracts.enums.DocumentCategory;
+import ua.mtb.inverse.contracts.enums.IssueCurrency;
 import ua.mtb.inverse.contracts.enums.OperationStatus;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import java.util.Map;
@@ -45,4 +47,6 @@ public class BuybackDto {
   private String custodianRequestId;
   private LocalDateTime nextRetryAt;
   private DiiaStatus diiaStatus;
+  private IssueCurrency currency;
+  private LocalDate maturityDate;
 }
