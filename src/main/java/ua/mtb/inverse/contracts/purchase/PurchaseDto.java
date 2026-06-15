@@ -8,13 +8,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import ua.mtb.inverse.contracts.client.ClientDto;
-import ua.mtb.inverse.contracts.enums.DiiaStatus;
-import ua.mtb.inverse.contracts.enums.DocumentCategory;
-import ua.mtb.inverse.contracts.enums.OperationStatus;
-import ua.mtb.inverse.contracts.enums.SessionType;
+import ua.mtb.inverse.contracts.enums.*;
 import ua.mtb.inverse.contracts.refund.RefundDataDto;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import java.util.Map;
@@ -54,4 +52,6 @@ public class PurchaseDto {
   private String ibanToReceive;
   private Map<String, String> clientChanges;
   private DiiaStatus diiaStatus;
+  private IssueCurrency currency;
+  private LocalDate maturityDate;
 }
