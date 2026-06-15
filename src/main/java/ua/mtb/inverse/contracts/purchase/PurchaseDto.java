@@ -54,4 +54,5 @@ public class PurchaseDto {
   private DiiaStatus diiaStatus;
   private IssueCurrency currency;
   private LocalDate maturityDate;
+  private BigDecimal calcRate;
 }
