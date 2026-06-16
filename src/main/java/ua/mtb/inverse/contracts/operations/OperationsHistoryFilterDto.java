@@ -1,6 +1,7 @@
 package ua.mtb.inverse.contracts.operations;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,6 +19,7 @@ public class OperationsHistoryFilterDto {
     @Schema(
         description = "Ідентифікатор контрагента клієнта",
         example = "1234567890")
+    @NotNull
     private String contragentId;
 
     @Schema(
@@ -33,8 +35,8 @@ public class OperationsHistoryFilterDto {
             Статус угоди:
             IN_PROGRESS - в обробці;
             COMPLETED - виконано;
-            REJECTED - відхилено;
-            CANCELED - анульовано.
+            CANCELED - відхилено;
+            FAILED - анульовано.
             """)
     private AgreementStatus status;
 
