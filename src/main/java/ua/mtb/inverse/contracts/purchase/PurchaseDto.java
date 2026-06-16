@@ -2,13 +2,12 @@ package ua.mtb.inverse.contracts.purchase;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
+import lombok.*;
 import ua.mtb.inverse.contracts.client.ClientDto;
-import ua.mtb.inverse.contracts.enums.*;
+import ua.mtb.inverse.contracts.enums.DiiaStatus;
+import ua.mtb.inverse.contracts.enums.DocumentCategory;
+import ua.mtb.inverse.contracts.enums.IssueCurrency;
+import ua.mtb.inverse.contracts.enums.OperationStatus;
 import ua.mtb.inverse.contracts.refund.RefundDataDto;
 
 import java.math.BigDecimal;
@@ -35,7 +34,6 @@ public class PurchaseDto {
   private Integer quantity;
   private BigDecimal purchasePrice;
   private BigDecimal totalPrice;
-  private SessionType sessionType;
   private OperationStatus status;
   private String purchaseAgreementNumber;
   private String purchaseAgreementDate;
@@ -46,7 +44,6 @@ public class PurchaseDto {
   private LocalDateTime purchaseValidTill;
   private LocalDateTime snapshotTakenAt;
   private Long limitId;
-  private String dealDate;
   private DocumentCategory documentCategory;
   private RefundDataDto refundData;
   private String ibanToReceive;
