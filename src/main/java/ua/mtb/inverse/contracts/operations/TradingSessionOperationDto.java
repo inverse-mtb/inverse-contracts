@@ -28,6 +28,7 @@ public class TradingSessionOperationDto {
   private Integer isinQuantity;
   private OperationStatus status;
   private SessionType sessionType;
+  private BigDecimal price;
   private BigDecimal totalPrice;
   private String operationAgreementNumber;
   private String operationAgreementDate;
