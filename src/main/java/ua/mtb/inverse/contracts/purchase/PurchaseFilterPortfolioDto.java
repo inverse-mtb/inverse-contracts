@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import ua.mtb.inverse.contracts.enums.IssueCurrency;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -31,8 +32,8 @@ public class PurchaseFilterPortfolioDto {
             - USD — долар США;
             - EUR — євро.
             """,
-        example = "UAH")
-    private IssueCurrency currency;
+        example = "[\"UAH\", \"USD\"]")
+    private List<IssueCurrency> currency;
 
     @Schema(
         description = "Початкова дата періоду придбання облігацій",
