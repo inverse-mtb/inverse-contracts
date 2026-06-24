@@ -26,6 +26,7 @@ public class TradingSessionOperationDto {
   private String identifyCode;
   private String isin;
   private Integer isinQuantity;
+  private Integer actualQuantity;
   private OperationStatus status;
   private SessionType sessionType;
   private BigDecimal price;
