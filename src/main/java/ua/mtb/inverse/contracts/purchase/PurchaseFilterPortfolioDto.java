@@ -35,9 +35,6 @@ public class PurchaseFilterPortfolioDto {
         example = "[\"UAH\", \"USD\"]")
     private List<IssueCurrency> currency;
 
-    @Schema(hidden = true)
-    private String isin;
-
     @Schema(
         description = "Початкова дата періоду придбання облігацій",
         example = "2026-01-01")
