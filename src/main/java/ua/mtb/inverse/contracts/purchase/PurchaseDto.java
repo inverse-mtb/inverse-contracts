@@ -32,6 +32,7 @@ public class PurchaseDto {
   private String clientIbanShortToPay;
   private String clientIbanToPay;
   private Integer quantity;
+  private Integer actualQuantity;
   private BigDecimal purchasePrice;
   private BigDecimal totalPrice;
   private OperationStatus status;
