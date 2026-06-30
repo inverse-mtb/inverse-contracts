@@ -21,7 +21,6 @@ public class ClientDto {
   private OffsetDateTime createdAt;
   private OffsetDateTime updatedAt;
   private String phoneNumber;
-  private String pin; //remove
   @NotBlank
   @NonNull
   private String contragentId;
@@ -57,8 +56,6 @@ public class ClientDto {
   private Boolean isGanOpened;
   private String generalAgreementDate;
   private GeneralAgreementState generalAgreementState;
-  @NotBlank
-  @NonNull
   private String ibanToPay;
   private String ibanToReceive;
 }
