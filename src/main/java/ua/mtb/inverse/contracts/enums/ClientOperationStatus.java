@@ -23,10 +23,8 @@ public enum ClientOperationStatus {
       case INITIATED,
               DOCUMENTS_GENERATED,
               WAITING_FOR_SIGNATURE,
-              SIGNED_BY_CLIENT,
-              SIGNED_BY_BANK,
+              SIGNED,
               DOCUMENTS_SEND,
-              AWAITING_CUSTODIAN,
               FUNDS_CHARGED ->
           ACTIVE;
       case COMPLETED, COMPLETED_EXTERNALLY -> COMPLETED;

@@ -15,8 +15,7 @@ public class SummaryReportPurchaseFilterDto {
           OperationStatus.COMPLETED_EXTERNALLY,
           OperationStatus.FUNDS_CHARGED,
           OperationStatus.CANCELLED,
-          OperationStatus.FAILED,
-          OperationStatus.AWAITING_CUSTODIAN);
+          OperationStatus.FAILED);
   private LocalDate dateFrom;
   private LocalDate dateTo;
   private ExportFormat exportFormat = ExportFormat.XLSX;
