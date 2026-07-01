@@ -9,6 +9,7 @@ import ua.mtb.inverse.contracts.enums.AgreementStatus;
 import ua.mtb.inverse.contracts.enums.TransactionType;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -27,18 +28,22 @@ public class OperationsHistoryFilterDto {
             Тип операції:
             PURCHASE - купівля облігацій;
             BUYBACK - продаж облігацій.
+            
+            Якщо поле пусте - вважаємо що потрібно віддати всі операції.
             """)
     private TransactionType type;
 
     @Schema(
         description = """
             Статус угоди:
+            CREATED - створено;
             IN_PROGRESS - в обробці;
+            FUNDS_CHARGED - кошти списано;
             COMPLETED - виконано;
             CANCELED - відхилено;
             FAILED - анульовано.
             """)
-    private AgreementStatus status;
+    private List<AgreementStatus> status;
 
     @Schema(
         description = "Початкова дата періоду пошуку операцій",
