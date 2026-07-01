@@ -47,18 +47,13 @@ public enum AgreementStatus {
         };
     }
 
-    public AgreementStatus getAgreementStatus(OperationStatus operationStatus) {
+    public static AgreementStatus from(OperationStatus operationStatus) {
         return switch (operationStatus) {
             case INITIATED, DOCUMENTS_GENERATED, WAITING_FOR_SIGNATURE -> CREATED;
-
             case SIGNED, DOCUMENTS_SEND -> IN_PROGRESS;
-
             case FUNDS_CHARGED -> FUNDS_CHARGED;
-
             case COMPLETED, COMPLETED_EXTERNALLY -> COMPLETED;
-
             case CANCELLED -> CANCELED;
-
             case FAILED -> FAILED;
         };
     }
