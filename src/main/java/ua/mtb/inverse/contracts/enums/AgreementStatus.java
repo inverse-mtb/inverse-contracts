@@ -7,8 +7,14 @@ import java.util.List;
 @Schema(description = "Статус угоди")
 public enum AgreementStatus {
 
+    @Schema(description = "Угоду створено")
+    CREATED,
+
     @Schema(description = "Угода знаходиться в обробці")
     IN_PROGRESS,
+
+    @Schema(description = "Кошти списано")
+    FUNDS_CHARGED,
 
     @Schema(description = "Угоду успішно виконано")
     COMPLETED,
@@ -21,12 +27,17 @@ public enum AgreementStatus {
 
     public List<OperationStatus> getDocTypes() {
         return switch (this) {
+            case  CREATED ->
+                    List.of(OperationStatus.INITIATED, OperationStatus.DOCUMENTS_GENERATED, OperationStatus.WAITING_FOR_SIGNATURE);
+
             case IN_PROGRESS ->
-                    List.of(OperationStatus.INITIATED, OperationStatus.DOCUMENTS_GENERATED, OperationStatus.WAITING_FOR_SIGNATURE,
-                            OperationStatus.SIGNED, OperationStatus.DOCUMENTS_SEND,
-                            OperationStatus.FUNDS_CHARGED, OperationStatus.COMPLETED_EXTERNALLY);
+                    List.of(OperationStatus.SIGNED, OperationStatus.DOCUMENTS_SEND);
+
+            case FUNDS_CHARGED ->
+                    List.of(OperationStatus.FUNDS_CHARGED);
+
             case COMPLETED ->
-                    List.of(OperationStatus.COMPLETED);
+                    List.of(OperationStatus.COMPLETED, OperationStatus.COMPLETED_EXTERNALLY);
 
             case CANCELED ->
                     List.of(OperationStatus.CANCELLED);
