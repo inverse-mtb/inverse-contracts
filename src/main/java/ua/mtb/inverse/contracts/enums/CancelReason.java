@@ -7,31 +7,29 @@ import lombok.RequiredArgsConstructor;
 @Getter
 @RequiredArgsConstructor
 @Schema(
-    description =
-        """
+        description =
+                """
                 Причина скасування купівлі облігацій.
-
+        
                 Можливі значення:
                 - CHANGED_MIND — передумав купувати;
                 - CHANGE_AMOUNT_OR_QUANTITY — хочу змінити суму або кількість;
                 - CHANGE_BONDS — хочу обрати інші облігації;
                 - UNSATISFIED_WITH_CONDITIONS — не влаштовують умови;
                 - BUY_LATER — хочу купити пізніше.
-
-                - PURCHASE_ERROR - технічний статус. Не використовувати.
-                """)
+                """
+)
 public enum CancelReason {
-  CHANGED_MIND("Передумав купувати"),
 
-  CHANGE_AMOUNT_OR_QUANTITY("Хочу змінити суму або кількість"),
+    CHANGED_MIND("Передумав купувати"),
 
-  CHANGE_BONDS("Хочу обрати інші облігації"),
+    CHANGE_AMOUNT_OR_QUANTITY("Хочу змінити суму або кількість"),
 
-  UNSATISFIED_WITH_CONDITIONS("Не влаштовують умови"),
+    CHANGE_BONDS("Хочу обрати інші облігації"),
 
-  BUY_LATER("Хочу купити пізніше"),
+    UNSATISFIED_WITH_CONDITIONS("Не влаштовують умови"),
 
-  PURCHASE_ERROR("Помилка бізнес процесів - повернення коштів");
+    BUY_LATER("Хочу купити пізніше");
 
-  private final String description;
+    private final String description;
 }
