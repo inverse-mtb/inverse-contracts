@@ -17,6 +17,8 @@ import lombok.RequiredArgsConstructor;
                 - CHANGE_BONDS — хочу обрати інші облігації;
                 - UNSATISFIED_WITH_CONDITIONS — не влаштовують умови;
                 - BUY_LATER — хочу купити пізніше.
+                
+                - PURCHASE_ERROR - технічний статус. Не використовувати.
                 """
 )
 public enum CancelReason {
@@ -29,7 +31,9 @@ public enum CancelReason {
 
     UNSATISFIED_WITH_CONDITIONS("Не влаштовують умови"),
 
-    BUY_LATER("Хочу купити пізніше");
+    BUY_LATER("Хочу купити пізніше"),
+
+    PURCHASE_ERROR("Помилка бізнес процесів - повернення коштів");
 
     private final String description;
 }
