@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>ua.mtb.inverse</groupId>
   <artifactId>inverse-contracts</artifactId>
-  <version>1.0.35</version>
+  <version>1.0.36</version>
   <name>inverse-contracts</name>
   <description>Shared DTO contracts for inverse microservices</description>
   <packaging>jar</packaging>
@@ -22,6 +22,7 @@
     <jackson.version>2.19.0</jackson.version>
     <jakarta.validation.version>3.1.1</jakarta.validation.version>
 
+    <spotless-maven-plugin.version>2.43.0</spotless-maven-plugin.version>
   </properties>
 
 
@@ -55,6 +56,28 @@
   <build>
 
     <plugins>
+
+      <plugin>
+        <groupId>com.diffplug.spotless</groupId>
+        <artifactId>spotless-maven-plugin</artifactId>
+        <version>${spotless-maven-plugin.version}</version>
+        <configuration>
+          <java>
+            <googleJavaFormat>
+              <version>1.27.0</version>
+            </googleJavaFormat>
+          </java>
+        </configuration>
+        <executions>
+          <execution>
+            <id>spotless-check</id>
+            <phase>test</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
 
       <!-- Java compiler -->
       <plugin>

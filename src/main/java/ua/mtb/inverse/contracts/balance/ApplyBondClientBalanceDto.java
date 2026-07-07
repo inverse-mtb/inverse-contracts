@@ -14,16 +14,10 @@ import lombok.NonNull;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ApplyBondClientBalanceDto {
-  @NotNull
-  @Positive
-  private Long clientId;
-  @NotBlank
-  @NonNull
-  private String isin;
-  @NotNull
-  private Long delta;
+  @NotNull @Positive private Long clientId;
+  @NotBlank @NonNull private String isin;
+  @NotNull private Long delta;
   private String operation;
-  @Positive
-  private Long referenceId;
+  @Positive private Long referenceId;
   private Boolean buyInApp;
 }
