@@ -14,7 +14,7 @@ import ua.mtb.inverse.contracts.enums.PushNotificationsResult;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PushMessage {
-  @NotNull private List<Notification> notifications;
+  @NotNull private List<Notification> messages;
 
   @Data
   @Builder
@@ -22,7 +22,7 @@ public class PushMessage {
   @NoArgsConstructor
   public static class Notification {
     @NotNull private Long requestId;
-    @NotNull @Builder.Default private String type = "BondStateEvent";
+    @NotNull private String type;
     private Long clientId;
     private EventType process;
     private PushNotificationsResult result;

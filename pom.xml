@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>ua.mtb.inverse</groupId>
   <artifactId>inverse-contracts</artifactId>
-  <version>1.0.36</version>
+  <version>1.0.37</version>
   <name>inverse-contracts</name>
   <description>Shared DTO contracts for inverse microservices</description>
   <packaging>jar</packaging>
