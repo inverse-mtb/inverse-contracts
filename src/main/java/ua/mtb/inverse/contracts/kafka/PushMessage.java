@@ -22,7 +22,7 @@ public class PushMessage {
   @NoArgsConstructor
   public static class Notification {
     @NotNull private Long requestId;
-    @NotNull private String type;
+    @NotNull @Builder.Default private String type = "BondStateEvent";
     private Long clientId;
     private EventType process;
     private PushNotificationsResult result;
