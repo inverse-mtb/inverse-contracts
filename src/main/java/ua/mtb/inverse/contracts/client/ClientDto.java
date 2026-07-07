@@ -1,6 +1,7 @@
 package ua.mtb.inverse.contracts.client;
 
 import jakarta.validation.constraints.NotBlank;
+import java.time.OffsetDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -8,8 +9,6 @@ import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import ua.mtb.inverse.contracts.enums.ClientStatus;
 import ua.mtb.inverse.contracts.enums.GeneralAgreementState;
-
-import java.time.OffsetDateTime;
 
 @Data
 @Builder
@@ -21,9 +20,7 @@ public class ClientDto {
   private OffsetDateTime createdAt;
   private OffsetDateTime updatedAt;
   private String phoneNumber;
-  @NotBlank
-  @NonNull
-  private String contragentId;
+  @NotBlank @NonNull private String contragentId;
   private String residentTypeId;
   private String sName;
   private String name;

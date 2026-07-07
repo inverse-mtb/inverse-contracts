@@ -1,13 +1,12 @@
 package ua.mtb.inverse.contracts.refund;
 
+import java.time.LocalDate;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import ua.mtb.inverse.contracts.enums.CancelReason;
 import ua.mtb.inverse.contracts.enums.RefundStatus;
-
-import java.time.LocalDate;
 
 @Data
 @Builder

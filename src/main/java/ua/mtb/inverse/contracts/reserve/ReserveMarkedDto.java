@@ -13,8 +13,6 @@ import ua.mtb.inverse.contracts.enums.LimitType;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ReserveMarkedDto {
-  @NotNull
-  @Positive
-  private Long ownerId;
+  @NotNull @Positive private Long ownerId;
   private LimitType type;
 }

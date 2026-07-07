@@ -12,8 +12,6 @@ import lombok.NonNull;
 @NoArgsConstructor
 @Builder
 public class GetDocBytesRequest {
-  @NonNull
-  @NotBlank
-  private String requestId;
+  @NonNull @NotBlank private String requestId;
   private Integer kep;
 }

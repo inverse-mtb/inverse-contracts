@@ -1,5 +1,8 @@
 package ua.mtb.inverse.contracts.operations;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -8,10 +11,6 @@ import ua.mtb.inverse.contracts.enums.IssueCurrency;
 import ua.mtb.inverse.contracts.enums.OperationStatus;
 import ua.mtb.inverse.contracts.enums.SessionType;
 import ua.mtb.inverse.contracts.enums.TransactionType;
-
-import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.OffsetDateTime;
 
 @Data
 @Builder

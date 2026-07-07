@@ -12,8 +12,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class LimitAtomicDto {
-  @NotNull
-  @Positive
-  private Long limitId;
+  @NotNull @Positive private Long limitId;
   private int quantity;
 }

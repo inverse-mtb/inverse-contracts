@@ -21,11 +21,11 @@ public enum ClientOperationStatus {
   public static ClientOperationStatus fromStatus(OperationStatus operationStatus) {
     return switch (operationStatus) {
       case INITIATED,
-              DOCUMENTS_GENERATED,
-              WAITING_FOR_SIGNATURE,
-              SIGNED,
-              DOCUMENTS_SEND,
-              FUNDS_CHARGED ->
+          DOCUMENTS_GENERATED,
+          WAITING_FOR_SIGNATURE,
+          SIGNED,
+          DOCUMENTS_SEND,
+          FUNDS_CHARGED ->
           ACTIVE;
       case COMPLETED, COMPLETED_EXTERNALLY -> COMPLETED;
       case CANCELLED -> CANCELLED;
