@@ -14,6 +14,7 @@ import ua.mtb.inverse.contracts.enums.OperationStatus;
 @AllArgsConstructor
 public class DiiaExpirationTaskDto {
   private Long id;
+  private String contragentId;
   private String requestId;
   private EventType eventType;
   private OperationStatus operationStatus;
