@@ -14,7 +14,7 @@ import ua.mtb.inverse.contracts.enums.PushNotificationsResult;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PushMessage {
-  @NotNull private List<Notification> messages;
+  @NotNull private List<Notification> notifications;
 
   @Data
   @Builder
