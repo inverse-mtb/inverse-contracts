@@ -1,4 +1,4 @@
-package ua.mtb.inverse.contracts.purchase;
+package ua.mtb.inverse.contracts.operations;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class PurchaseObsoleteFilterDto {
+public class OperationsObsoleteFilterDto {
 
   @NotNull private String contragentId;
 
