@@ -8,8 +8,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PageMetadata {
-    private int size;
-    private int number;
-    private long totalElements;
-    private int totalPages;
+  private int size;
+  private int number;
+  private long totalElements;
+  private int totalPages;
 }
