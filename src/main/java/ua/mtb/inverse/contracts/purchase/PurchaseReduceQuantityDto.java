@@ -19,4 +19,6 @@ public class PurchaseReduceQuantityDto {
   private String isin;
 
   private Integer quantity;
+
+  private Long buybackId;
 }
