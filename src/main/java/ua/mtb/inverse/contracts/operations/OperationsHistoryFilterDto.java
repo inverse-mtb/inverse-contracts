@@ -1,5 +1,6 @@
 package ua.mtb.inverse.contracts.operations;
 
+import io.swagger.v3.oas.annotations.Hidden;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotNull;
 import java.time.LocalDate;
@@ -49,4 +50,6 @@ public class OperationsHistoryFilterDto {
 
   @Schema(description = "Кінцева дата періоду пошуку операцій", example = "2026-06-01")
   private LocalDate endDate;
+
+  @Hidden private boolean forAnalytics;
 }
