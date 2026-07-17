@@ -46,4 +46,6 @@ public class BuybackDto {
   private DiiaStatus diiaStatus;
   private IssueCurrency currency;
   private LocalDate maturityDate;
+  private LocalDateTime dealCompletedAt;
+  private String contragentId;
 }
