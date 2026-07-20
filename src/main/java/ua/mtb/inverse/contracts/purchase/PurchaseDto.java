@@ -49,4 +49,6 @@ public class PurchaseDto {
   private IssueCurrency currency;
   private LocalDate maturityDate;
   private BigDecimal calcRate;
+  private OffsetDateTime diiaCallbackPurchaseReceivedAt;
+  private OffsetDateTime diiaCallbackPurchaseCancelReceivedAt;
 }

@@ -48,4 +48,5 @@ public class BuybackDto {
   private LocalDate maturityDate;
   private LocalDateTime dealCompletedAt;
   private String contragentId;
+  private OffsetDateTime diiaCallbackBuybackReceivedAt;
 }
