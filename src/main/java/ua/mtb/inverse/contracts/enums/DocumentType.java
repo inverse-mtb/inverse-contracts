@@ -7,34 +7,49 @@ import lombok.Getter;
 
 @Getter
 public enum DocumentType {
-  ACCOUNTING_ORDER_FILE_REV("100639", 10047, "Розпорядження на облікову операцію (Банк)"),
-  ACCOUNTING_ORDER_FILE("100640", 10023, "Розпорядження на облікову операцію (Клієнт)"),
-  SECURITIES_ACCOUNT_APPLICATION_FILE("100542", 10015, "Анкета рахунку в цінних паперах"),
+  ACCOUNTING_ORDER_FILE_REV("100639", "100751", 10047, "Розпорядження на облікову операцію (Банк)"),
+  ACCOUNTING_ORDER_FILE("100640", "100752", 10023, "Розпорядження на облікову операцію (Клієнт)"),
+  SECURITIES_ACCOUNT_APPLICATION_FILE("100542", "100542", 10015, "Анкета рахунку в цінних паперах"),
   SERVICE_AGREEMENT_FILE(
+      "100543",
       "100543",
       10017,
       "Заява про приєднання до Договору про обслуговування рахунку в цінних паперах"),
   GENERAL_AGREEMENT_FILE(
       "100017",
+      "100544",
       10019,
       "Генеральний договір про надання інвестиційних послуг (індивідуальна частина)"),
-  PURCHASE_AGREEMENT_FILE("100545", 10021, "Договір купівлі-продажу фінансових інструментів"),
+  PURCHASE_AGREEMENT_FILE(
+      "100545", "100545", 10021, "Договір купівлі-продажу фінансових інструментів"),
   PURCHASE_CANCELLATION_AGREEMENT_FILE(
+      "100754",
       "100754",
       10039,
       "Заява про розірвання договору куплі-продажу фінансових інструментів (МТБ ИНВЕСТ)"),
   PURCHASE_CANCELLATION_APPLICATION_FILE(
-      "100753", 10038, "Договір розірвання куплі-продажу фінансових інструментів (МТБ ИНВЕСТ)"),
+      "100753",
+      "100753",
+      10038,
+      "Договір розірвання куплі-продажу фінансових інструментів (МТБ ИНВЕСТ)"),
   ACCOUNTING_ORDER_CHANGE_FILE(
-      "100569", 10043, "Розпорядження на внесення змін до анкети рахунку у цінних паперах"),
+      "100569",
+      "100713",
+      10043,
+      "Розпорядження на внесення змін до анкети рахунку у цінних паперах"),
   GENERAL_AGREEMENT_FILE_ADDITIONAL_CHANGES(
       "100570",
+      "100745",
       10051,
       "Додатковий договір про внесення змін до Генерального договору про надання інвестиційних послуг (індивідуальна частина)"),
   PURCHASE_AGREEMENT_FILE_REV(
-      "100723", 10045, "Договір купівлі-продажу фінансових інструментів (Банк - Покупець)");
+      "100723",
+      "100723",
+      10045,
+      "Договір купівлі-продажу фінансових інструментів (Банк - Покупець)");
 
   private final String univId;
+  private final String univIdDev;
   private final int diiaId;
   private final String docName;
 
@@ -48,8 +63,9 @@ public enum DocumentType {
       Arrays.stream(values())
           .collect(Collectors.toMap(DocumentType::getDiiaId, DocumentType::getDocName));
 
-  DocumentType(String univId, int diiaId, String docName) {
+  DocumentType(String univId, String univIdDev, int diiaId, String docName) {
     this.univId = univId;
+    this.univIdDev = univIdDev;
     this.diiaId = diiaId;
     this.docName = docName;
   }
