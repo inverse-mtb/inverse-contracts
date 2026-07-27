@@ -1,7 +1,15 @@
 package ua.mtb.inverse.contracts.kafka;
 
 import java.time.OffsetDateTime;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class CustodianCallbackErrorAlertMessage {
 
   private String sourceService;
