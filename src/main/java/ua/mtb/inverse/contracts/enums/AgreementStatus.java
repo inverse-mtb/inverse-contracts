@@ -14,6 +14,9 @@ public enum AgreementStatus {
   @Schema(description = "Кошти списано")
   FUNDS_CHARGED,
 
+  @Schema(description = "Розпочато переоформлення документів")
+  AWAITING_SECURITIES_DELIVERY,
+
   @Schema(description = "Угоду успішно виконано")
   COMPLETED,
 
@@ -23,7 +26,7 @@ public enum AgreementStatus {
   @Schema(description = "Угоду анульовано")
   FAILED;
 
-  public List<OperationStatus> getDocTypes() {
+  public List<OperationStatus> getOperationStatuses() {
     return switch (this) {
       case CREATED ->
           List.of(
@@ -35,7 +38,9 @@ public enum AgreementStatus {
 
       case FUNDS_CHARGED -> List.of(OperationStatus.FUNDS_CHARGED);
 
-      case COMPLETED -> List.of(OperationStatus.COMPLETED, OperationStatus.COMPLETED_EXTERNALLY);
+      case AWAITING_SECURITIES_DELIVERY -> List.of(OperationStatus.AWAITING_SECURITIES_DELIVERY);
+
+      case COMPLETED -> List.of(OperationStatus.COMPLETED, OperationStatus.SECURITIES_DELIVERED);
 
       case CANCELED -> List.of(OperationStatus.CANCELLED);
 
@@ -48,7 +53,8 @@ public enum AgreementStatus {
       case INITIATED, DOCUMENTS_GENERATED, WAITING_FOR_SIGNATURE -> CREATED;
       case SIGNED, DOCUMENTS_SEND -> IN_PROGRESS;
       case FUNDS_CHARGED -> FUNDS_CHARGED;
-      case COMPLETED, COMPLETED_EXTERNALLY -> COMPLETED;
+      case AWAITING_SECURITIES_DELIVERY -> AWAITING_SECURITIES_DELIVERY;
+      case COMPLETED, SECURITIES_DELIVERED -> COMPLETED;
       case CANCELLED -> CANCELED;
       case FAILED -> FAILED;
     };
