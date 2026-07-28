@@ -25,9 +25,10 @@ public enum ClientOperationStatus {
           WAITING_FOR_SIGNATURE,
           SIGNED,
           DOCUMENTS_SEND,
-          FUNDS_CHARGED ->
+          FUNDS_CHARGED,
+          AWAITING_SECURITIES_DELIVERY ->
           ACTIVE;
-      case COMPLETED, COMPLETED_EXTERNALLY -> COMPLETED;
+      case COMPLETED, SECURITIES_DELIVERED -> COMPLETED;
       case CANCELLED -> CANCELLED;
       case FAILED -> FAILED;
     };
