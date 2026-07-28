@@ -39,6 +39,7 @@ public class OperationsHistoryFilterDto {
             CREATED - створено;
             IN_PROGRESS - в обробці;
             FUNDS_CHARGED - кошти списано;
+            AWAITING_SECURITIES_DELIVERY - розпочато переоформлення документів;
             COMPLETED - виконано;
             CANCELED - відхилено;
             FAILED - анульовано.
