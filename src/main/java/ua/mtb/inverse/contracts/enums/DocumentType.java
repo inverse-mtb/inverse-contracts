@@ -56,6 +56,9 @@ public enum DocumentType {
   private static final String SUFFIX_PDF = " - pdf";
   private static final String PREFIX_CANCEL = "МІ_";
 
+  private static final String PDF_EXTENSION = ".pdf";
+  private static final String P7S_EXTENSION = ".pdf.p7s";
+
   private static final Map<String, DocumentType> BY_DOC_NAME =
       Arrays.stream(values()).collect(Collectors.toMap(DocumentType::getDocName, d -> d));
 
@@ -104,5 +107,36 @@ public enum DocumentType {
         return fileName;
       }
     }
+  }
+
+  public static String getRealDocName(Integer diiaId) {
+    return switch (diiaId) {
+      case 10015, 10017, 10019, 10021, 10023, 10038, 10039, 10043, 10045, 10047, 10051 ->
+          BY_DOC_DIIA_ID.get(diiaId) + PDF_EXTENSION;
+
+      case 10016 -> BY_DOC_DIIA_ID.get(10015) + P7S_EXTENSION;
+
+      case 10018 -> BY_DOC_DIIA_ID.get(10017) + P7S_EXTENSION;
+
+      case 10020 -> BY_DOC_DIIA_ID.get(10019) + P7S_EXTENSION;
+
+      case 10022 -> BY_DOC_DIIA_ID.get(10021) + P7S_EXTENSION;
+
+      case 10024 -> BY_DOC_DIIA_ID.get(10023) + P7S_EXTENSION;
+
+      case 10040 -> BY_DOC_DIIA_ID.get(10038) + P7S_EXTENSION;
+
+      case 10041 -> BY_DOC_DIIA_ID.get(10039) + P7S_EXTENSION;
+
+      case 10044 -> BY_DOC_DIIA_ID.get(10043) + P7S_EXTENSION;
+
+      case 10046 -> BY_DOC_DIIA_ID.get(10045) + P7S_EXTENSION;
+
+      case 10048 -> BY_DOC_DIIA_ID.get(10047) + P7S_EXTENSION;
+
+      case 10052 -> BY_DOC_DIIA_ID.get(10051) + P7S_EXTENSION;
+
+      default -> throw new IllegalArgumentException("Unknown diiaId: " + diiaId);
+    };
   }
 }
