@@ -3,6 +3,7 @@ package ua.mtb.inverse.contracts.enums;
 public enum SagaState {
   PHASE1_COMPLETE,
   PHASE2_SCHEDULED,
+  PHASE2_STARTING,
   PHASE2_IN_PROGRESS,
   PHASE2_CALLBACK_RECEIVED,
   PHASE2_COMPLETE,
