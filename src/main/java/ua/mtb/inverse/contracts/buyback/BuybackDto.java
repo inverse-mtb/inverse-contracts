@@ -43,6 +43,7 @@ public class BuybackDto {
   private LocalDateTime buybackValidTill;
   private String custodianRequestId;
   private LocalDateTime nextRetryAt;
+  private int retryAttempt;
   private DiiaStatus diiaStatus;
   private IssueCurrency currency;
   private LocalDate maturityDate;
