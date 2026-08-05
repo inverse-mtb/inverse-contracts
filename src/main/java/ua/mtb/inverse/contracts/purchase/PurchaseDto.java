@@ -51,4 +51,5 @@ public class PurchaseDto {
   private BigDecimal calcRate;
   private OffsetDateTime diiaCallbackPurchaseReceivedAt;
   private OffsetDateTime diiaCallbackPurchaseCancelReceivedAt;
+  private OffsetDateTime deliveryDate;
 }
