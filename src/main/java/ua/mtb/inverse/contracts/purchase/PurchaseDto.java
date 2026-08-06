@@ -40,6 +40,7 @@ public class PurchaseDto {
   private String contragentId;
   private LocalDateTime purchaseValidTill;
   private LocalDateTime snapshotTakenAt;
+  private OffsetDateTime snapshotCancelTakenAt;
   private Long limitId;
   private DocumentCategory documentCategory;
   private RefundDataDto refundData;
