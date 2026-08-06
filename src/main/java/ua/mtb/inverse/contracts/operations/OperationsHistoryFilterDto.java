@@ -42,7 +42,8 @@ public class OperationsHistoryFilterDto {
             AWAITING_SECURITIES_DELIVERY - розпочато переоформлення документів;
             COMPLETED - виконано;
             CANCELED - відхилено;
-            FAILED - анульовано.
+            REVOKED - анульовано;
+            FAILED - помилка виконання.
             """)
   private List<AgreementStatus> status;
 
