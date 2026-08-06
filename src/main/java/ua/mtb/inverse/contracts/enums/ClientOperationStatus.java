@@ -6,6 +6,7 @@ public enum ClientOperationStatus {
   ACTIVE,
   COMPLETED,
   CANCELLED,
+  REVOKED,
   FAILED;
 
   @JsonValue
@@ -14,6 +15,7 @@ public enum ClientOperationStatus {
       case ACTIVE -> "Активний";
       case COMPLETED -> "Виконано";
       case CANCELLED -> "Анульовано";
+      case REVOKED -> "Кошти повернуто";
       case FAILED -> "Забраковано";
     };
   }
@@ -30,6 +32,7 @@ public enum ClientOperationStatus {
           ACTIVE;
       case COMPLETED, SECURITIES_DELIVERED -> COMPLETED;
       case CANCELLED -> CANCELLED;
+      case REVOKED -> REVOKED;
       case FAILED -> FAILED;
     };
   }

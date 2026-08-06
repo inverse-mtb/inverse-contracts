@@ -11,5 +11,6 @@ public enum OperationStatus {
   AWAITING_SECURITIES_DELIVERY, // Going to Custodian to deliver securities
   SECURITIES_DELIVERED, // Securities delivered to client(or bank if buyback)
   COMPLETED, // Purchase is fully finalized
+  REVOKED, // Purchase refunded
   FAILED // Purchase process encountered an error
 }

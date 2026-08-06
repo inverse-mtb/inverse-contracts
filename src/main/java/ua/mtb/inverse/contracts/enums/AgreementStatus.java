@@ -24,6 +24,9 @@ public enum AgreementStatus {
   CANCELED,
 
   @Schema(description = "Угоду анульовано")
+  REVOKED,
+
+  @Schema(description = "Помилка угоди")
   FAILED;
 
   public List<OperationStatus> getOperationStatuses() {
@@ -44,6 +47,8 @@ public enum AgreementStatus {
 
       case CANCELED -> List.of(OperationStatus.CANCELLED);
 
+      case REVOKED -> List.of(OperationStatus.REVOKED);
+
       case FAILED -> List.of(OperationStatus.FAILED);
     };
   }
@@ -56,6 +61,7 @@ public enum AgreementStatus {
       case AWAITING_SECURITIES_DELIVERY -> AWAITING_SECURITIES_DELIVERY;
       case COMPLETED, SECURITIES_DELIVERED -> COMPLETED;
       case CANCELLED -> CANCELED;
+      case REVOKED -> REVOKED;
       case FAILED -> FAILED;
     };
   }
