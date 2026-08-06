@@ -1,30 +1,29 @@
 package ua.mtb.inverse.contracts.kafka.trading;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import ua.mtb.inverse.contracts.enums.OperationStatus;
+import ua.mtb.inverse.contracts.enums.TransactionType;
 
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class TradingSessionDetailsDto {
-  private Long operationId;
-
   private String isin;
 
-  private String operationType;
+  private TransactionType operationType;
 
-  private String operationStatus;
+  private OperationStatus operationStatus;
 
-  private LocalDate operationDate;
+  private String generalAgreementNumber;
 
-  private BigDecimal quantity;
+  private String generalAgreementDate;
 
-  private BigDecimal price;
+  private BigDecimal totalPrice;
 
-  private BigDecimal amount;
+  private String contragentId;
 }
