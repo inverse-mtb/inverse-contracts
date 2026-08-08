@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import ua.mtb.inverse.contracts.enums.DocumentCategory;
 
 @Data
 @Builder
@@ -23,6 +24,8 @@ public class TradingSessionEmailMessage {
   private String clientName;
 
   private String diiaId;
+
+  private DocumentCategory documentCategory;
 
   /** Повна інформація по торговій сесії. */
   private TradingSessionDetailsDto session;
