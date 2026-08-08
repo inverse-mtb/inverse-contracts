@@ -37,9 +37,9 @@ public enum AgreementStatus {
               OperationStatus.DOCUMENTS_GENERATED,
               OperationStatus.WAITING_FOR_SIGNATURE);
 
-      case IN_PROGRESS -> List.of(OperationStatus.SIGNED, OperationStatus.DOCUMENTS_SEND);
+      case IN_PROGRESS -> List.of(OperationStatus.SIGNED);
 
-      case FUNDS_CHARGED -> List.of(OperationStatus.FUNDS_CHARGED);
+      case FUNDS_CHARGED -> List.of(OperationStatus.FUNDS_CHARGED, OperationStatus.DOCUMENTS_SEND);
 
       case AWAITING_SECURITIES_DELIVERY -> List.of(OperationStatus.AWAITING_SECURITIES_DELIVERY);
 
@@ -56,8 +56,8 @@ public enum AgreementStatus {
   public static AgreementStatus from(OperationStatus operationStatus) {
     return switch (operationStatus) {
       case INITIATED, DOCUMENTS_GENERATED, WAITING_FOR_SIGNATURE -> CREATED;
-      case SIGNED, DOCUMENTS_SEND -> IN_PROGRESS;
-      case FUNDS_CHARGED -> FUNDS_CHARGED;
+      case SIGNED -> IN_PROGRESS;
+      case FUNDS_CHARGED, DOCUMENTS_SEND -> FUNDS_CHARGED;
       case AWAITING_SECURITIES_DELIVERY -> AWAITING_SECURITIES_DELIVERY;
       case COMPLETED, SECURITIES_DELIVERED -> COMPLETED;
       case CANCELLED -> CANCELED;
