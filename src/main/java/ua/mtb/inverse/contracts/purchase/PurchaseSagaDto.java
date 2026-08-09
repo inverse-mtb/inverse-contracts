@@ -26,4 +26,5 @@ public class PurchaseSagaDto {
   @NotNull private Integer dealId;
   private String custodianRequestId;
   private int phase2RetryCount;
+  private OffsetDateTime successNotifyB2At;
 }
