@@ -33,7 +33,7 @@ public enum ClientOperationStatus {
       case COMPLETED, SECURITIES_DELIVERED -> COMPLETED;
       case CANCELLED -> CANCELLED;
       case REVOKED -> REVOKED;
-      case FAILED -> FAILED;
+      case FAILED, FAILED_INITIATION -> FAILED;
     };
   }
 }

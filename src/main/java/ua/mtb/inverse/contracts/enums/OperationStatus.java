@@ -4,6 +4,7 @@ public enum OperationStatus {
   INITIATED, // Purchase request created
   DOCUMENTS_GENERATED, // The necessary documents have been generated
   WAITING_FOR_SIGNATURE, // Awaiting client and bank signatures
+  FAILED_INITIATION, // Set status while purchase or buyback failed in first 3 statuses
   SIGNED, // Bank and client signature completed
   DOCUMENTS_SEND, // The necessary documents have been sent to e-mail
   CANCELLED, // The client canceled the purchase request
