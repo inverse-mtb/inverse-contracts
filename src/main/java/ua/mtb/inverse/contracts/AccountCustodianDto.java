@@ -58,4 +58,5 @@ public class AccountCustodianDto {
   private BigInteger agreementId;
   private Set<String> changes;
   private Boolean fop;
+  private String mfo;
 }
