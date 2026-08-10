@@ -49,7 +49,7 @@ public enum AgreementStatus {
 
       case REVOKED -> List.of(OperationStatus.REVOKED);
 
-      case FAILED -> List.of(OperationStatus.FAILED);
+      case FAILED -> List.of(OperationStatus.FAILED, OperationStatus.FAILED_INITIATION);
     };
   }
 
@@ -62,7 +62,7 @@ public enum AgreementStatus {
       case COMPLETED, SECURITIES_DELIVERED -> COMPLETED;
       case CANCELLED -> CANCELED;
       case REVOKED -> REVOKED;
-      case FAILED -> FAILED;
+      case FAILED, FAILED_INITIATION -> FAILED;
     };
   }
 }
