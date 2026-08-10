@@ -35,6 +35,5 @@ public class SummaryReportPurchaseData {
   private String paymentDate;
   private LocalDateTime paymentReRegistration;
   private OperationStatus status;
-  private String operationType;
-  private LocalDate refundDate;
+  private String ODVPOnSell;
 }
