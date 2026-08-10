@@ -1,4 +1,4 @@
-package ua.mtb.inverse.contracts.purchase;
+package ua.mtb.inverse.contracts;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -13,7 +13,7 @@ import ua.mtb.inverse.contracts.enums.OperationStatus;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class SummaryReportPurchaseData {
+public class SummaryReportData {
   private Integer agreementNumber;
   private String buyerName;
   private String identifyCode;
@@ -35,5 +35,6 @@ public class SummaryReportPurchaseData {
   private String paymentDate;
   private LocalDateTime paymentReRegistration;
   private OperationStatus status;
-  private String ODVPOnSell;
+  private String operationType;
+  private LocalDate refundDate;
 }
