@@ -23,6 +23,7 @@ import ua.mtb.inverse.contracts.enums.OperationStatus;
 @AllArgsConstructor
 public class BuybackDto {
   @NotNull @Positive private Long id;
+  private Integer dealId;
   private Integer version;
   private OffsetDateTime createdAt;
   private OffsetDateTime updatedAt;
