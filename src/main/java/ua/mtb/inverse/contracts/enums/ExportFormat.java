@@ -8,7 +8,8 @@ import lombok.RequiredArgsConstructor;
 public enum ExportFormat {
   PDF(".pdf"),
   XML(".xml"),
-  XLSX(".xlsx");
+  XLSX(".xlsx"),
+  CSV(".csv");
 
   private final String extension;
 }
