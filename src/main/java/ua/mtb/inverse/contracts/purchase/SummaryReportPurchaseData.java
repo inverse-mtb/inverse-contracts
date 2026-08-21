@@ -15,6 +15,7 @@ import ua.mtb.inverse.contracts.enums.OperationStatus;
 @Builder
 public class SummaryReportPurchaseData {
   private Integer agreementNumber;
+  private String bankOperation;
   private String buyerName;
   private String identifyCode;
   private String purchaseAgreementNumber;
@@ -36,4 +37,5 @@ public class SummaryReportPurchaseData {
   private LocalDateTime paymentReRegistration;
   private OperationStatus status;
   private String ODVPOnSell;
+  private LocalDate refundDate;
 }
