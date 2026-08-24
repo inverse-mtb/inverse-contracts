@@ -22,4 +22,5 @@ public class TradingSessionDto {
   private String isin;
   private Integer isinQuantity;
   private OperationStatus status;
+  private String operationAgreementDate;
 }
