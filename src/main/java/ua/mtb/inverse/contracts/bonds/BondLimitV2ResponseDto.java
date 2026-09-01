@@ -6,7 +6,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import ua.mtb.inverse.contracts.enums.IssueCurrency;
 import ua.mtb.inverse.contracts.enums.TransactionType;
 
 @Data
@@ -40,8 +39,4 @@ public class BondLimitV2ResponseDto {
   private OffsetDateTime validTo;
 
   private OffsetDateTime manuallyUpdatedAt;
-
-  private String isin;
-
-  private IssueCurrency issueCurrency;
 }
