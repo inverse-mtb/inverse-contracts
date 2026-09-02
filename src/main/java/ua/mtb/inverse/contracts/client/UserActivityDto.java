@@ -8,10 +8,7 @@ import lombok.NoArgsConstructor;
 import ua.mtb.inverse.contracts.enums.AuditAction;
 import ua.mtb.inverse.contracts.enums.AuditSection;
 
-/**
- * DTO for user activity history (all operations by specific admin)
- *
- */
+/** DTO for user activity history (all operations by specific admin) */
 @Data
 @Builder
 @NoArgsConstructor

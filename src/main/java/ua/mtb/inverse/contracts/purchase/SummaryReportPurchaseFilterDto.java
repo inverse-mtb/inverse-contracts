@@ -12,11 +12,10 @@ public class SummaryReportPurchaseFilterDto {
   private List<OperationStatus> statuses =
       List.of(
           OperationStatus.COMPLETED,
-          OperationStatus.COMPLETED_EXTERNALLY,
+          OperationStatus.SECURITIES_DELIVERED,
           OperationStatus.FUNDS_CHARGED,
           OperationStatus.CANCELLED,
-          OperationStatus.FAILED,
-          OperationStatus.AWAITING_CUSTODIAN);
+          OperationStatus.FAILED);
   private LocalDate dateFrom;
   private LocalDate dateTo;
   private ExportFormat exportFormat = ExportFormat.XLSX;

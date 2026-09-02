@@ -4,13 +4,18 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import ua.mtb.inverse.contracts.enums.OperationStatus;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class SummaryReportPurchaseData {
   private Integer agreementNumber;
+  private String bankOperation;
   private String buyerName;
   private String identifyCode;
   private String purchaseAgreementNumber;
@@ -32,4 +37,5 @@ public class SummaryReportPurchaseData {
   private LocalDateTime paymentReRegistration;
   private OperationStatus status;
   private String ODVPOnSell;
+  private LocalDate refundDate;
 }
