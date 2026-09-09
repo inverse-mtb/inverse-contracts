@@ -1,10 +1,12 @@
 package ua.mtb.inverse.contracts.currency;
 
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import java.math.BigDecimal;
-import java.time.OffsetDateTime;
-import java.util.List;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -39,7 +41,7 @@ public class NbuRateResponse {
   @Data
   @JsonIgnoreProperties(ignoreUnknown = true)
   public static class NbuRateData {
-    private OffsetDateTime arcdate;
+    private LocalDateTime arcdate;
     private Integer currencyid;
     private String symbolcode;
     private BigDecimal rate;
