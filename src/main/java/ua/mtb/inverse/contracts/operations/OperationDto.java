@@ -2,6 +2,7 @@ package ua.mtb.inverse.contracts.operations;
 
 import jakarta.validation.Valid;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.util.Map;
 import lombok.AllArgsConstructor;
@@ -59,13 +60,12 @@ public class OperationDto {
   private DiiaStatus diiaStatus;
 
   private IssueCurrency currency;
-  private OffsetDateTime maturityDate;
+  private LocalDate maturityDate;
 
   private OffsetDateTime snapshotTakenAt;
   private OffsetDateTime snapshotCancelTakenAt;
 
   private OffsetDateTime diiaCallbackReceivedAt;
-  private OffsetDateTime diiaCancelCallbackReceivedAt;
 
   private OffsetDateTime deliveryDate;
   private OffsetDateTime completedAt;
