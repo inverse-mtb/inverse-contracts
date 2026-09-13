@@ -66,6 +66,7 @@ public class OperationDto {
   private OffsetDateTime snapshotCancelTakenAt;
 
   private OffsetDateTime diiaCallbackReceivedAt;
+  private OffsetDateTime diiaCancelCallbackReceivedAt;
 
   private OffsetDateTime deliveryDate;
   private OffsetDateTime completedAt;
