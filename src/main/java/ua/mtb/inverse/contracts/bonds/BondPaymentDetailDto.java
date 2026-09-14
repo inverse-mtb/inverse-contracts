@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import lombok.Builder;
 import lombok.Data;
 import lombok.extern.jackson.Jacksonized;
+import ua.mtb.inverse.contracts.enums.IssueCurrency;
 
 @Data
 @Builder
@@ -14,4 +15,5 @@ public class BondPaymentDetailDto {
   private BigDecimal value;
   private Integer type;
   private BigDecimal totalValue; // value × purchase quantity
+  private IssueCurrency currency;
 }
