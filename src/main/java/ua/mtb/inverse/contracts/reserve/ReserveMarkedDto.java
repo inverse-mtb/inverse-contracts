@@ -6,7 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import ua.mtb.inverse.contracts.enums.LimitType;
+import ua.mtb.inverse.contracts.enums.TransactionType;
 
 @Data
 @Builder
@@ -14,5 +14,5 @@ import ua.mtb.inverse.contracts.enums.LimitType;
 @AllArgsConstructor
 public class ReserveMarkedDto {
   @NotNull @Positive private Long ownerId;
-  private LimitType type;
+  private TransactionType type;
 }
