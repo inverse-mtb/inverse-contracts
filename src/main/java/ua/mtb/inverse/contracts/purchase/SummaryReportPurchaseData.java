@@ -2,7 +2,7 @@ package ua.mtb.inverse.contracts.purchase;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -34,7 +34,7 @@ public class SummaryReportPurchaseData {
   private BigDecimal yieldRateDateEndOwnership;
   private BigDecimal clearYield;
   private String paymentDate;
-  private LocalDateTime paymentReRegistration;
+  private OffsetDateTime paymentReRegistration;
   private OperationStatus status;
   private String ODVPOnSell;
   private LocalDate refundDate;
