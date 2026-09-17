@@ -1,6 +1,6 @@
 package ua.mtb.inverse.contracts.diia;
 
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,6 +18,6 @@ public class DiiaExpirationTaskDto {
   private String requestId;
   private EventType eventType;
   private OperationStatus operationStatus;
-  private LocalDateTime executeAt;
+  private OffsetDateTime executeAt;
   private boolean processed;
 }
