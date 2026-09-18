@@ -2,6 +2,7 @@ package ua.mtb.inverse.contracts.client;
 
 import jakarta.validation.constraints.NotBlank;
 import java.time.OffsetDateTime;
+import java.util.Map;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -53,6 +54,6 @@ public class ClientDto {
   private Boolean isGanOpened;
   private String generalAgreementDate;
   private GeneralAgreementState generalAgreementState;
-  private String ibanToPay;
-  private String ibanToReceive;
+  private Map<String, String> ibanToPay;
+  private Map<String, String> ibanToReceive;
 }
