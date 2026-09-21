@@ -31,7 +31,7 @@ public class ClientDto {
   private String birthDate;
   private String birthPlace;
   private Integer countryId;
-  private Long bankDetailId;
+  private Map<String, Long> bankDetailId;
   private String identifyCode;
   private Integer regionalCodeId;
   private Integer passportType;
