@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import ua.mtb.inverse.contracts.enums.IssueCurrency;
 
 @Data
 @AllArgsConstructor
@@ -18,4 +19,5 @@ public class SummaryErrorReportData {
   private String isin;
   private BigDecimal totalPrice;
   private Integer quantity;
+  private IssueCurrency currency;
 }
