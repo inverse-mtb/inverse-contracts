@@ -13,4 +13,5 @@ public class OrderFilterDto {
   private String custodianAccountNumber;
   private List<SessionType> sessionTypes;
   private List<OperationStatus> statuses;
+  private String operationAgreementDate;
 }
