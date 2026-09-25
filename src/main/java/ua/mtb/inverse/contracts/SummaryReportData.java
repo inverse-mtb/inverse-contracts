@@ -8,6 +8,7 @@ import java.time.ZoneId;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import ua.mtb.inverse.contracts.enums.IssueCurrency;
 import ua.mtb.inverse.contracts.enums.OperationStatus;
 
 @Data
@@ -39,6 +40,7 @@ public class SummaryReportData {
   private OperationStatus status;
   private String operationType;
   private LocalDate refundDate;
+  private IssueCurrency currency;
 
   /** Constructor used by BUYBACK queries where Operation.dealCompletedAt is OffsetDateTime. */
   public SummaryReportData(
@@ -143,6 +145,114 @@ public class SummaryReportData {
         status,
         operationType,
         refundDate);
+  }
+
+  public SummaryReportData(
+      Integer agreementNumber,
+      String buyerName,
+      String identifyCode,
+      String purchaseAgreementNumber,
+      String purchaseAgreementDate,
+      BigDecimal totalPrice,
+      String eminentBank,
+      String OVDPType,
+      String isin,
+      BigDecimal purchasePrice,
+      Integer quantity,
+      LocalDate purchaseBankDate,
+      BigDecimal priceBank,
+      BigDecimal yieldRate,
+      LocalDate maturityDate,
+      BigDecimal yieldRateDatePurchase,
+      BigDecimal yieldRateDateEndOwnership,
+      BigDecimal clearYield,
+      String paymentDate,
+      LocalDateTime paymentReRegistration,
+      OperationStatus status,
+      String operationType,
+      LocalDate refundDate,
+      IssueCurrency currency) {
+
+    this(
+        agreementNumber,
+        buyerName,
+        identifyCode,
+        purchaseAgreementNumber,
+        purchaseAgreementDate,
+        totalPrice,
+        eminentBank,
+        OVDPType,
+        isin,
+        purchasePrice,
+        quantity,
+        purchaseBankDate,
+        priceBank,
+        yieldRate,
+        maturityDate,
+        yieldRateDatePurchase,
+        yieldRateDateEndOwnership,
+        clearYield,
+        paymentDate,
+        toKyivOffsetDateTime(paymentReRegistration),
+        status,
+        operationType,
+        refundDate);
+
+    this.currency = currency;
+  }
+
+  public SummaryReportData(
+      Integer agreementNumber,
+      String buyerName,
+      String identifyCode,
+      String purchaseAgreementNumber,
+      String purchaseAgreementDate,
+      BigDecimal totalPrice,
+      String eminentBank,
+      String OVDPType,
+      String isin,
+      BigDecimal purchasePrice,
+      Integer quantity,
+      LocalDate purchaseBankDate,
+      BigDecimal priceBank,
+      BigDecimal yieldRate,
+      LocalDate maturityDate,
+      BigDecimal yieldRateDatePurchase,
+      BigDecimal yieldRateDateEndOwnership,
+      BigDecimal clearYield,
+      String paymentDate,
+      OffsetDateTime paymentReRegistration,
+      OperationStatus status,
+      String operationType,
+      LocalDate refundDate,
+      IssueCurrency currency) {
+
+    this(
+        agreementNumber,
+        buyerName,
+        identifyCode,
+        purchaseAgreementNumber,
+        purchaseAgreementDate,
+        totalPrice,
+        eminentBank,
+        OVDPType,
+        isin,
+        purchasePrice,
+        quantity,
+        purchaseBankDate,
+        priceBank,
+        yieldRate,
+        maturityDate,
+        yieldRateDatePurchase,
+        yieldRateDateEndOwnership,
+        clearYield,
+        paymentDate,
+        paymentReRegistration,
+        status,
+        operationType,
+        refundDate);
+
+    this.currency = currency;
   }
 
   private static OffsetDateTime toKyivOffsetDateTime(LocalDateTime value) {
