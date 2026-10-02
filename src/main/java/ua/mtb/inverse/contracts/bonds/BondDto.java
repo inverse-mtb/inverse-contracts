@@ -34,15 +34,4 @@ public class BondDto {
   private String imagePath;
   private String bondName;
   private Boolean isVisible;
-
-  @Data
-  @Builder
-  @AllArgsConstructor
-  @NoArgsConstructor
-  @JsonIgnoreProperties(ignoreUnknown = true)
-  public static class Coupon {
-    private LocalDate date;
-    private BigDecimal value;
-    private Integer type;
-  }
 }

@@ -2,6 +2,7 @@ package ua.mtb.inverse.contracts.news;
 
 import java.time.OffsetDateTime;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import ua.mtb.inverse.contracts.enums.ActionType;
@@ -10,6 +11,7 @@ import ua.mtb.inverse.contracts.enums.NewsType;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class NewsFeedDto {
   private Long id;
   private Integer version;
