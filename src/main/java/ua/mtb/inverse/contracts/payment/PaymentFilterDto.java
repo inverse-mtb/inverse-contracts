@@ -12,4 +12,5 @@ public class PaymentFilterDto {
   private LocalDate dateFrom;
   private LocalDate dateTo;
   private List<OperationStatus> statuses;
+  private String operationAgreementDate;
 }
