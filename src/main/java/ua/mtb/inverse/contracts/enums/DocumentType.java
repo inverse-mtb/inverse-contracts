@@ -25,6 +25,11 @@ public enum DocumentType {
       "100545",
       10021,
       "Договір купівлі-продажу фінансових інструментів (Банк - Продавець)"),
+  PURCHASE_AGREEMENT_FILE_CURRENCY(
+      "100822",
+      "100822",
+      10056,
+      "Договір купівлі-продажу фінансових інструментів (Банк - Продавець) валютні"),
   PURCHASE_CANCELLATION_AGREEMENT_FILE(
       "100642",
       "100754",
@@ -32,6 +37,11 @@ public enum DocumentType {
       "Заява про розірвання договору купівлі-продажу фінансових інструментів"),
   PURCHASE_CANCELLATION_APPLICATION_FILE(
       "100641", "100753", 10038, "Договір розірвання купівлі-продажу фінансових інструментів"),
+  BUYBACK_CANCELLATION_APPLICATION_FILE(
+      "100820",
+      "100820",
+      10054,
+      "Договір про розірвання Договору купівлі-продажу ФІ (Банк-Покупець)"),
   ACCOUNTING_ORDER_CHANGE_FILE(
       "100569",
       "100713",
@@ -46,7 +56,12 @@ public enum DocumentType {
       "100723",
       "100723",
       10045,
-      "Договір купівлі-продажу фінансових інструментів (Банк - Покупець)");
+      "Договір купівлі-продажу фінансових інструментів (Банк - Покупець)"),
+  PURCHASE_AGREEMENT_FILE_REV_CURRENCY(
+      "111111",
+      "111111",
+      11111,
+      "Договір купівлі-продажу фінансових інструментів (Банк - Покупець) валютні");
 
   private final String univId;
   private final String univIdDev;
@@ -97,7 +112,7 @@ public enum DocumentType {
       case 10038, 10039 -> {
         return PREFIX_CANCEL + fileName;
       }
-      case 10021, 10023, 10045, 10019, 10017, 10015, 10051 -> {
+      case 10021, 10023, 10045, 10019, 10017, 10015, 10051, 10054, 10056, 11111 -> {
         return fileName + SUFFIX_PDF;
       }
       case 10043 -> {
@@ -111,7 +126,20 @@ public enum DocumentType {
 
   public static String getRealDocName(Integer diiaId) {
     return switch (diiaId) {
-      case 10015, 10017, 10019, 10021, 10023, 10038, 10039, 10043, 10045, 10047, 10051 ->
+      case 10015,
+          10017,
+          10019,
+          10021,
+          10023,
+          10038,
+          10039,
+          10043,
+          10045,
+          10047,
+          10051,
+          10054,
+          10056,
+          11111 ->
           BY_DOC_DIIA_ID.get(diiaId) + PDF_EXTENSION;
 
       case 10016 -> BY_DOC_DIIA_ID.get(10015) + P7S_EXTENSION;
@@ -135,6 +163,12 @@ public enum DocumentType {
       case 10048 -> BY_DOC_DIIA_ID.get(10047) + P7S_EXTENSION;
 
       case 10052 -> BY_DOC_DIIA_ID.get(10051) + P7S_EXTENSION;
+
+      case 10055 -> BY_DOC_DIIA_ID.get(10054) + P7S_EXTENSION;
+
+      case 10057 -> BY_DOC_DIIA_ID.get(10056) + P7S_EXTENSION;
+
+      case 11112 -> BY_DOC_DIIA_ID.get(11111) + P7S_EXTENSION;
 
       default -> throw new IllegalArgumentException("Unknown diiaId: " + diiaId);
     };
