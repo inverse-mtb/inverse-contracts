@@ -58,9 +58,9 @@ public enum DocumentType {
       10045,
       "Договір купівлі-продажу фінансових інструментів (Банк - Покупець)"),
   PURCHASE_AGREEMENT_FILE_REV_CURRENCY(
-      "111111",
-      "111111",
-      11111,
+      "100823",
+      "100823",
+      10058,
       "Договір купівлі-продажу фінансових інструментів (Банк - Покупець) валютні");
 
   private final String univId;
@@ -112,7 +112,7 @@ public enum DocumentType {
       case 10038, 10039 -> {
         return PREFIX_CANCEL + fileName;
       }
-      case 10021, 10023, 10045, 10019, 10017, 10015, 10051, 10054, 10056, 11111 -> {
+      case 10021, 10023, 10045, 10019, 10017, 10015, 10051, 10054, 10056, 10058 -> {
         return fileName + SUFFIX_PDF;
       }
       case 10043 -> {
@@ -139,7 +139,7 @@ public enum DocumentType {
           10051,
           10054,
           10056,
-          11111 ->
+          10058 ->
           BY_DOC_DIIA_ID.get(diiaId) + PDF_EXTENSION;
 
       case 10016 -> BY_DOC_DIIA_ID.get(10015) + P7S_EXTENSION;
@@ -168,7 +168,7 @@ public enum DocumentType {
 
       case 10057 -> BY_DOC_DIIA_ID.get(10056) + P7S_EXTENSION;
 
-      case 11112 -> BY_DOC_DIIA_ID.get(11111) + P7S_EXTENSION;
+      case 10059 -> BY_DOC_DIIA_ID.get(10058) + P7S_EXTENSION;
 
       default -> throw new IllegalArgumentException("Unknown diiaId: " + diiaId);
     };
