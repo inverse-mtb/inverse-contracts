@@ -56,4 +56,5 @@ public class ClientDto {
   private GeneralAgreementState generalAgreementState;
   private Map<String, String> ibanToPay;
   private Map<String, String> ibanToReceive;
+  private String bankClientId;
 }
