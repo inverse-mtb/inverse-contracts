@@ -28,16 +28,19 @@ public class ClientDocumentDto {
     }
 
     return switch (documentCategory) {
-      case PURCHASE_FIRST -> "Документи першої покупки";
-      case PURCHASE -> "Документи повторної покупки";
-      case PURCHASE_IBAN_TO_PAY_CHANGES -> "Документи повторної покупки зміна айбану оплати";
-      case PURCHASE_IBAN_TO_RECEIVE_CHANGES -> "Документи повторної покупки зміна айбану отримання";
-      case PURCHASE_USER_CHANGES -> "Документи повторної покупки зміна полів користувача";
-      case CANCEL_PURCHASE -> "Документи скасування";
-      case BUYBACK -> "Договір купівлі-продажу (зворотній викуп)";
-      case BUYBACK_USER_CHANGES ->
+      case PURCHASE_FIRST, PURCHASE_FIRST_CURRENCY -> "Документи першої покупки";
+      case PURCHASE, PURCHASE_CURRENCY -> "Документи повторної покупки";
+      case PURCHASE_IBAN_TO_PAY_CHANGES, PURCHASE_IBAN_TO_PAY_CHANGES_CURRENCY ->
+          "Документи повторної покупки зміна айбану оплати";
+      case PURCHASE_IBAN_TO_RECEIVE_CHANGES, PURCHASE_IBAN_TO_RECEIVE_CHANGES_CURRENCY ->
+          "Документи повторної покупки зміна айбану отримання";
+      case PURCHASE_USER_CHANGES, PURCHASE_USER_CHANGES_CURRENCY ->
+          "Документи повторної покупки зміна полів користувача";
+      case CANCEL_PURCHASE, CANCEL_BUYBACK -> "Документи скасування";
+      case BUYBACK, BUYBACK_CURRENCY -> "Договір купівлі-продажу (зворотній викуп)";
+      case BUYBACK_USER_CHANGES, BUYBACK_USER_CHANGES_CURRENCY ->
           "Договір купівлі-продажу (зворотній викуп з додатком зміна полів користувача)";
-      case BUYBACK_IBAN_TO_RECEIVE_CHANGES ->
+      case BUYBACK_IBAN_TO_RECEIVE_CHANGES, BUYBACK_IBAN_TO_RECEIVE_CHANGES_CURRENCY ->
           "Договір купівлі-продажу (зворотній викуп з додатком зміна айбану отримання)";
     };
   }
