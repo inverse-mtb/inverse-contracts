@@ -31,7 +31,7 @@ public class SummaryReportPurchaseData {
   private LocalDate purchaseBankDate;
   private BigDecimal priceBank;
   private BigDecimal yieldRate;
-  private LocalDate maturityDate;
+  private OffsetDateTime maturityDate;
   private BigDecimal yieldRateDatePurchase;
   private BigDecimal yieldRateDateEndOwnership;
   private BigDecimal clearYield;
@@ -58,7 +58,7 @@ public class SummaryReportPurchaseData {
       LocalDate purchaseBankDate,
       BigDecimal priceBank,
       BigDecimal yieldRate,
-      LocalDate maturityDate,
+      OffsetDateTime maturityDate,
       BigDecimal yieldRateDatePurchase,
       BigDecimal yieldRateDateEndOwnership,
       BigDecimal clearYield,
@@ -113,7 +113,7 @@ public class SummaryReportPurchaseData {
       LocalDate purchaseBankDate,
       BigDecimal priceBank,
       BigDecimal yieldRate,
-      LocalDate maturityDate,
+      OffsetDateTime maturityDate,
       BigDecimal yieldRateDatePurchase,
       BigDecimal yieldRateDateEndOwnership,
       BigDecimal clearYield,

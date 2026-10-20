@@ -3,6 +3,7 @@ package ua.mtb.inverse.contracts.bonds;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.AllArgsConstructor;
@@ -29,7 +30,7 @@ public class BondDto {
   private IssueCurrency currencyCode;
   private String issueCurrency;
   private LocalDate releaseDate;
-  private LocalDate maturityDate;
+  private OffsetDateTime maturityDate;
   @Builder.Default private List<Coupon> payments = new ArrayList<>();
   private String imagePath;
   private String bondName;
