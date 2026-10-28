@@ -31,5 +31,5 @@ public class ClaimBatchDto {
 
   @Min(1)
   @Max(100)
-  private int maxAttempts;
+  private Integer maxAttempts;
 }
