@@ -53,8 +53,10 @@ public class ClientDto {
   private String generalAgreementNumber;
   private Boolean isGanOpened;
   private String generalAgreementDate;
+  private String generalAgreementIban;
   private GeneralAgreementState generalAgreementState;
   private Map<String, String> ibanToPay;
   private Map<String, String> ibanToReceive;
+
   private String bankClientId;
 }
