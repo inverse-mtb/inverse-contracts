@@ -3,11 +3,15 @@ package ua.mtb.inverse.contracts.refund;
 import java.time.LocalDate;
 import java.util.List;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import ua.mtb.inverse.contracts.enums.RefundStatus;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class RefundFilterDto {
   private String beneficiary;
   private String identifyCode;
