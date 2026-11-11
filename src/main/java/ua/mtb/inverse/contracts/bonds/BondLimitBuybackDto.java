@@ -1,7 +1,6 @@
 package ua.mtb.inverse.contracts.bonds;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import lombok.AllArgsConstructor;
@@ -22,7 +21,7 @@ public class BondLimitBuybackDto {
   private Integer buyAmount;
   private BigDecimal pitRate;
   private BigDecimal militaryLevy;
-  private LocalDate tradeDate;
+  private LocalDateTime tradeDate;
   private OffsetDateTime manuallyUpdatedAt;
   private LocalDateTime validTill;
   private Long bondId;

@@ -10,11 +10,24 @@ public enum DocumentCategory {
   PURCHASE_IBAN_TO_RECEIVE_CHANGES, // not-first purchase user change only IBAN to receive → 6 (8)
   // docs -- don't go to custodian
   CANCEL_PURCHASE, // cancellation flow → 4 different docs
+  CANCEL_BUYBACK, // cancellation flow → 4 different docs
   BUYBACK, // sell → 4 (6) docs
   BUYBACK_USER_CHANGES, // sell user change fields from b2 (any) → 10 (12) docs
-  BUYBACK_IBAN_TO_RECEIVE_CHANGES; // sell user change ony IBAN to receive → 6 (8) docs -- don't go
+  BUYBACK_IBAN_TO_RECEIVE_CHANGES, // sell user change ony IBAN to receive → 6 (8) docs -- don't go
 
-  // to custodian
+  PURCHASE_FIRST_CURRENCY, // first-ever purchase → 10 (12) docs
+  PURCHASE_CURRENCY, // not-first purchase → 4 (6) docs
+  PURCHASE_USER_CHANGES_CURRENCY, // not-first purchase user change fields from b2 (any) → 10 (12)
+  // docs
+  PURCHASE_IBAN_TO_PAY_CHANGES_CURRENCY, // not-first purchase user change ony IBAN to pay → 8 (10)
+  // docs
+  PURCHASE_IBAN_TO_RECEIVE_CHANGES_CURRENCY, // not-first purchase user change only IBAN to receive
+  // → 6 (8) docs -- don't go to custodian
+  BUYBACK_CURRENCY, // sell → 4 (6) docs
+  BUYBACK_USER_CHANGES_CURRENCY, // sell user change fields from b2 (any) → 10 (12) docs
+  BUYBACK_IBAN_TO_RECEIVE_CHANGES_CURRENCY; // sell user change ony IBAN to receive → 6 (8) docs --
+
+  // don't go to custodian
 
   public List<Integer> getDocTypesNoExtraDocs() {
     return switch (this) {
@@ -33,12 +46,36 @@ public enum DocumentCategory {
 
       case CANCEL_PURCHASE -> List.of(10038, 10039, 10040, 10041);
 
+      case CANCEL_BUYBACK -> List.of(10054, 10055, 10040, 10041);
+
       case BUYBACK -> List.of(10045, 10046, 10023, 10024);
 
       case BUYBACK_USER_CHANGES ->
           List.of(10043, 10044, 10015, 10016, 10051, 10052, 10045, 10046, 10023, 10024);
 
       case BUYBACK_IBAN_TO_RECEIVE_CHANGES -> List.of(10045, 10046, 10023, 10024, 10051, 10052);
+
+      case PURCHASE_FIRST_CURRENCY ->
+          List.of(10015, 10016, 10017, 10018, 10019, 10020, 10056, 10057, 10023, 10024);
+
+      case PURCHASE_CURRENCY -> List.of(10056, 10057, 10023, 10024);
+
+      case PURCHASE_USER_CHANGES_CURRENCY ->
+          List.of(10056, 10057, 10023, 10024, 10043, 10044, 10015, 10016, 10051, 10052);
+
+      case PURCHASE_IBAN_TO_PAY_CHANGES_CURRENCY ->
+          List.of(10056, 10057, 10023, 10024, 10051, 10052);
+
+      case PURCHASE_IBAN_TO_RECEIVE_CHANGES_CURRENCY ->
+          List.of(10056, 10057, 10023, 10024, 10043, 10044, 10015, 10016);
+
+      case BUYBACK_CURRENCY -> List.of(10058, 10059, 10023, 10024);
+
+      case BUYBACK_USER_CHANGES_CURRENCY ->
+          List.of(10043, 10044, 10015, 10016, 10051, 10052, 10058, 10059, 10023, 10024);
+
+      case BUYBACK_IBAN_TO_RECEIVE_CHANGES_CURRENCY ->
+          List.of(10058, 10059, 10023, 10024, 10051, 10052);
     };
   }
 
@@ -62,6 +99,8 @@ public enum DocumentCategory {
 
       case CANCEL_PURCHASE -> List.of(10038, 10039, 10040, 10041);
 
+      case CANCEL_BUYBACK -> List.of(10054, 10055, 10040, 10041);
+
       case BUYBACK -> List.of(10045, 10046, 10047, 10048, 10023, 10024);
 
       case BUYBACK_USER_CHANGES ->
@@ -70,6 +109,31 @@ public enum DocumentCategory {
 
       case BUYBACK_IBAN_TO_RECEIVE_CHANGES ->
           List.of(10045, 10046, 10023, 10024, 10051, 10052, 10047, 10048);
+
+      case PURCHASE_FIRST_CURRENCY ->
+          List.of(
+              10015, 10016, 10017, 10018, 10019, 10020, 10056, 10057, 10023, 10024, 10047, 10048);
+
+      case PURCHASE_CURRENCY -> List.of(10056, 10057, 10023, 10024, 10047, 10048);
+
+      case PURCHASE_USER_CHANGES_CURRENCY ->
+          List.of(
+              10056, 10057, 10023, 10024, 10043, 10044, 10015, 10016, 10051, 10052, 10047, 10048);
+
+      case PURCHASE_IBAN_TO_PAY_CHANGES_CURRENCY ->
+          List.of(10056, 10057, 10023, 10024, 10051, 10052, 10047, 10048);
+
+      case PURCHASE_IBAN_TO_RECEIVE_CHANGES_CURRENCY ->
+          List.of(10056, 10057, 10023, 10024, 10043, 10044, 10015, 10016, 10047, 10048);
+
+      case BUYBACK_CURRENCY -> List.of(10058, 10059, 10047, 10048, 10023, 10024);
+
+      case BUYBACK_USER_CHANGES_CURRENCY ->
+          List.of(
+              10043, 10044, 10015, 10016, 10051, 10052, 10058, 10059, 10047, 10048, 10023, 10024);
+
+      case BUYBACK_IBAN_TO_RECEIVE_CHANGES_CURRENCY ->
+          List.of(10058, 10059, 10023, 10024, 10051, 10052, 10047, 10048);
     };
   }
 }
