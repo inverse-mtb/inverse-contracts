@@ -15,4 +15,6 @@ public class BondLimitResponseDto extends BaseBondLimitResponseDto {
   private BigDecimal askPrice;
 
   private Integer sellAmount;
+
+  private String author;
 }
