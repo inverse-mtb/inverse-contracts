@@ -47,6 +47,9 @@ public class OperationDto {
   private String operationAgreementNumber;
   private String operationAgreementDate;
 
+  private String generalAgreementNumber;
+  private String generalAgreementDate;
+
   private String diiaRequestId;
   private String contragentId;
 
