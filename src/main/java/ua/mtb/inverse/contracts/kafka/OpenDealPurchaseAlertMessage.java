@@ -16,6 +16,7 @@ public class OpenDealPurchaseAlertMessage {
   String eventDateTime;
 
   Long purchaseId;
+  Integer dealId;
   String diiaRequestId;
   String contragentId;
 
